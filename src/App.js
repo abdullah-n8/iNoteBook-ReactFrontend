@@ -1,10 +1,31 @@
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./components/Home";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />,
+//   },
+//   {
+//     path: "/about",
+//     element: <About />,
+//   },
+// ]);
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
