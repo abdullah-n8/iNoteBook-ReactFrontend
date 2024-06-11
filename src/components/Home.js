@@ -1,8 +1,14 @@
 import React from 'react'
+import NoteForm from './Notes Components/NoteForm'
+import NotesContainer from './Notes Components/Notes'
+
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className='container'>
+    <NoteForm />
+    <NotesContainer />
+    </div>
   )
 }
 
