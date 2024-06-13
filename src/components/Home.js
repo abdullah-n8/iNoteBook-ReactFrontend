@@ -1,14 +1,30 @@
-import React from 'react'
-import NoteForm from './Notes Components/NoteForm'
-import NotesContainer from './Notes Components/Notes'
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Notes from './Notes Components/Notes';
+import Navbar from './Navbar';
+
+
+
 
 
 const Home = () => {
+
+  let navigate = useNavigate()
+  useEffect(() => {
+    if(!localStorage.getItem('token')) {
+      navigate('/login')
+    } else {
+      navigate('/')
+    }
+  }, [])
+
   return (
+    <>
+
     <div className='container'>
-    <NoteForm />
-    <NotesContainer />
+    <Notes />
     </div>
+    </>
   )
 }
 
